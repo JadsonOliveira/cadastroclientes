@@ -1,0 +1,12 @@
+C:\Users\Jadson.Oliveira\Documents\Visual Studio 2017\Projects\CadastroClientes\CadastroClientes\bin\Debug\CadastroClientes.exe.config
+C:\Users\Jadson.Oliveira\Documents\Visual Studio 2017\Projects\CadastroClientes\CadastroClientes\bin\Debug\CadastroClientes.exe
+C:\Users\Jadson.Oliveira\Documents\Visual Studio 2017\Projects\CadastroClientes\CadastroClientes\bin\Debug\CadastroClientes.pdb
+C:\Users\Jadson.Oliveira\Documents\Visual Studio 2017\Projects\CadastroClientes\CadastroClientes\obj\Debug\CadastroClientes.csprojResolveAssemblyReference.cache
+C:\Users\Jadson.Oliveira\Documents\Visual Studio 2017\Projects\CadastroClientes\CadastroClientes\obj\Debug\CadastroClientes.Form1.resources
+C:\Users\Jadson.Oliveira\Documents\Visual Studio 2017\Projects\CadastroClientes\CadastroClientes\obj\Debug\CadastroClientes.FrmCadCliente.resources
+C:\Users\Jadson.Oliveira\Documents\Visual Studio 2017\Projects\CadastroClientes\CadastroClientes\obj\Debug\CadastroClientes.Properties.Resources.resources
+C:\Users\Jadson.Oliveira\Documents\Visual Studio 2017\Projects\CadastroClientes\CadastroClientes\obj\Debug\CadastroClientes.csproj.GenerateResource.Cache
+C:\Users\Jadson.Oliveira\Documents\Visual Studio 2017\Projects\CadastroClientes\CadastroClientes\obj\Debug\CadastroClientes.csproj.CoreCompileInputs.cache
+C:\Users\Jadson.Oliveira\Documents\Visual Studio 2017\Projects\CadastroClientes\CadastroClientes\obj\Debug\CadastroClientes.exe
+C:\Users\Jadson.Oliveira\Documents\Visual Studio 2017\Projects\CadastroClientes\CadastroClientes\obj\Debug\CadastroClientes.pdb
+C:\Users\Jadson.Oliveira\Documents\Visual Studio 2017\Projects\CadastroClientes\CadastroClientes\obj\Debug\CadastroClientes.Frmconsulta.resources
