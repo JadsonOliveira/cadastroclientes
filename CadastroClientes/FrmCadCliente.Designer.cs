@@ -39,9 +39,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.BtnCad = new System.Windows.Forms.Button();
             this.Endereco = new System.Windows.Forms.TextBox();
-            this.Telefone = new System.Windows.Forms.TextBox();
             this.Email = new System.Windows.Forms.TextBox();
             this.Nome = new System.Windows.Forms.TextBox();
+            this.Telefone = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +59,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Telefone);
             this.groupBox1.Controls.Add(this.btnalteracao);
             this.groupBox1.Controls.Add(this.DataNasc);
             this.groupBox1.Controls.Add(this.label7);
@@ -68,13 +69,12 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.BtnCad);
             this.groupBox1.Controls.Add(this.Endereco);
-            this.groupBox1.Controls.Add(this.Telefone);
             this.groupBox1.Controls.Add(this.Email);
             this.groupBox1.Controls.Add(this.Nome);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(35, 69);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(799, 395);
+            this.groupBox1.Size = new System.Drawing.Size(604, 388);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -96,7 +96,7 @@
             this.DataNasc.Location = new System.Drawing.Point(151, 97);
             this.DataNasc.Mask = "00/00/0000";
             this.DataNasc.Name = "DataNasc";
-            this.DataNasc.Size = new System.Drawing.Size(139, 20);
+            this.DataNasc.Size = new System.Drawing.Size(91, 20);
             this.DataNasc.TabIndex = 13;
             this.DataNasc.ValidatingType = typeof(System.DateTime);
             this.DataNasc.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
@@ -104,7 +104,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(36, 150);
+            this.label7.Location = new System.Drawing.Point(39, 157);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 11;
@@ -113,11 +113,12 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(36, 206);
+            this.label6.Location = new System.Drawing.Point(36, 213);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 13);
             this.label6.TabIndex = 10;
             this.label6.Text = "Telefone";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -152,7 +153,7 @@
             // 
             this.BtnCad.BackColor = System.Drawing.Color.AliceBlue;
             this.BtnCad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCad.Location = new System.Drawing.Point(460, 309);
+            this.BtnCad.Location = new System.Drawing.Point(341, 309);
             this.BtnCad.Name = "BtnCad";
             this.BtnCad.Size = new System.Drawing.Size(196, 35);
             this.BtnCad.TabIndex = 5;
@@ -164,36 +165,37 @@
             // 
             this.Endereco.Location = new System.Drawing.Point(151, 266);
             this.Endereco.Name = "Endereco";
-            this.Endereco.Size = new System.Drawing.Size(505, 20);
+            this.Endereco.Size = new System.Drawing.Size(374, 20);
             this.Endereco.TabIndex = 4;
-            // 
-            // Telefone
-            // 
-            this.Telefone.Location = new System.Drawing.Point(151, 199);
-            this.Telefone.Name = "Telefone";
-            this.Telefone.Size = new System.Drawing.Size(328, 20);
-            this.Telefone.TabIndex = 3;
             // 
             // Email
             // 
-            this.Email.Location = new System.Drawing.Point(151, 143);
+            this.Email.Location = new System.Drawing.Point(151, 150);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(428, 20);
+            this.Email.Size = new System.Drawing.Size(374, 20);
             this.Email.TabIndex = 2;
             // 
             // Nome
             // 
             this.Nome.Location = new System.Drawing.Point(151, 40);
             this.Nome.Name = "Nome";
-            this.Nome.Size = new System.Drawing.Size(505, 20);
+            this.Nome.Size = new System.Drawing.Size(374, 20);
             this.Nome.TabIndex = 0;
+            // 
+            // Telefone
+            // 
+            this.Telefone.Location = new System.Drawing.Point(151, 206);
+            this.Telefone.Mask = "(999) 000-0000";
+            this.Telefone.Name = "Telefone";
+            this.Telefone.Size = new System.Drawing.Size(91, 20);
+            this.Telefone.TabIndex = 15;
             // 
             // FrmCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(886, 513);
+            this.ClientSize = new System.Drawing.Size(693, 506);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -216,12 +218,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.TextBox Telefone;
         public System.Windows.Forms.TextBox Email;
         public System.Windows.Forms.TextBox Nome;
         public System.Windows.Forms.Button BtnCad;
         public System.Windows.Forms.TextBox Endereco;
         public System.Windows.Forms.MaskedTextBox DataNasc;
         public System.Windows.Forms.Button btnalteracao;
+        public System.Windows.Forms.MaskedTextBox Telefone;
     }
 }

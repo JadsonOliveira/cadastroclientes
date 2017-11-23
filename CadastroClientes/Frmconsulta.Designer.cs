@@ -36,8 +36,8 @@
             this.DgResultado = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.alterarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgResultado)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -49,9 +49,9 @@
             this.groupBox1.Controls.Add(this.BtnAlteracao2);
             this.groupBox1.Controls.Add(this.BtnConsulta);
             this.groupBox1.Controls.Add(this.DgResultado);
-            this.groupBox1.Location = new System.Drawing.Point(2, 31);
+            this.groupBox1.Location = new System.Drawing.Point(2, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(880, 670);
+            this.groupBox1.Size = new System.Drawing.Size(880, 641);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -86,12 +86,13 @@
             // BtnConsulta
             // 
             this.BtnConsulta.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BtnConsulta.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BtnConsulta.BackColor = System.Drawing.Color.DarkSlateGray;
             this.BtnConsulta.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.BtnConsulta.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BtnConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Millimeter, ((byte)(0)));
-            this.BtnConsulta.Location = new System.Drawing.Point(262, 524);
+            this.BtnConsulta.Location = new System.Drawing.Point(3, 524);
             this.BtnConsulta.Name = "BtnConsulta";
-            this.BtnConsulta.Size = new System.Drawing.Size(350, 105);
+            this.BtnConsulta.Size = new System.Drawing.Size(874, 114);
             this.BtnConsulta.TabIndex = 1;
             this.BtnConsulta.Text = "Consultar";
             this.BtnConsulta.UseVisualStyleBackColor = false;
@@ -101,14 +102,13 @@
             // DgResultado
             // 
             this.DgResultado.AllowUserToAddRows = false;
-            this.DgResultado.AllowUserToDeleteRows = false;
             this.DgResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgResultado.ContextMenuStrip = this.contextMenuStrip1;
             this.DgResultado.Location = new System.Drawing.Point(0, 0);
             this.DgResultado.Name = "DgResultado";
             this.DgResultado.ReadOnly = true;
             this.DgResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgResultado.Size = new System.Drawing.Size(874, 518);
+            this.DgResultado.Size = new System.Drawing.Size(871, 527);
             this.DgResultado.TabIndex = 0;
             this.DgResultado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgResultado_CellContentClick);
             // 
@@ -124,28 +124,28 @@
             // alterarToolStripMenuItem
             // 
             this.alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
-            this.alterarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.alterarToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.alterarToolStripMenuItem.Text = "Alterar";
-            this.alterarToolStripMenuItem.Click += new System.EventHandler(this.alterarToolStripMenuItem_Click);
+            this.alterarToolStripMenuItem.Click += new System.EventHandler(this.AlterarToolStripMenuItem_Click);
+            // 
+            // excluirToolStripMenuItem
+            // 
+            this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
+            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.excluirToolStripMenuItem.Text = "Excluir";
+            this.excluirToolStripMenuItem.Click += new System.EventHandler(this.excluirToolStripMenuItem_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(7, -1);
+            this.label1.Location = new System.Drawing.Point(0, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(267, 29);
             this.label1.TabIndex = 3;
             this.label1.Text = "Consulta de Clientes";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // excluirToolStripMenuItem
-            // 
-            this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
-            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.excluirToolStripMenuItem.Text = "Excluir";
-            this.excluirToolStripMenuItem.Click += new System.EventHandler(this.excluirToolStripMenuItem_Click);
             // 
             // Frmconsulta
             // 
@@ -159,6 +159,7 @@
             this.Name = "Frmconsulta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Frmconsulta";
+            this.Load += new System.EventHandler(this.Frmconsulta_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgResultado)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -170,13 +171,13 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button BtnConsulta;
-        private System.Windows.Forms.DataGridView DgResultado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem alterarToolStripMenuItem;
         public System.Windows.Forms.Button BtnExcluir;
         public System.Windows.Forms.Button BtnAlteracao2;
         private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem;
+        public System.Windows.Forms.Button BtnConsulta;
+        public System.Windows.Forms.DataGridView DgResultado;
     }
 }

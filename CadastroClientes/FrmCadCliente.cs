@@ -15,18 +15,14 @@ namespace CadastroClientes
     {
         internal Form1 mdiparent;
 
-        public object TxtNome { get;  set; }
-        public object MskNasc { get;  set; }
-        public object TxtTel { get;  set; }
-        public object TxtEmail { get;  set; }
-        public object TxtEnd { get;  set; }
+        
 
         public FrmCadCliente()
         {
             InitializeComponent();
         }
 
-        public String Codigo;
+        
 
 
         private void label1_Click(object sender, EventArgs e)
@@ -58,8 +54,8 @@ namespace CadastroClientes
         {
             try
             {
-                String Stringcon = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Jadson.Oliveira\Documents\Base.accdb";
-                OleDbConnection conn = new OleDbConnection(Stringcon);
+                String Stringcon = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Jadson.Oliveira\Documents\Base.mdb";
+                var conn = new OleDbConnection(Stringcon);
                 conn.Open();
 
                 String SQL;
@@ -67,7 +63,7 @@ namespace CadastroClientes
                 SQL = "Insert Into clientes(Nome,DataNasc,Telefone,Email,Endereco)Values ";
                 SQL += "('"+Nome.Text+"','"+DataNasc.Text+"', '"+Telefone.Text+"','"+Email.Text+"', '"+Endereco.Text+"')";
 
-                OleDbCommand cmd = new OleDbCommand(SQL, conn);
+                var cmd = new OleDbCommand(SQL, conn);
 
                 cmd.ExecuteNonQuery();
 
@@ -93,29 +89,27 @@ namespace CadastroClientes
         {
             try
             {
-                var clienteDb = new ClienteDB(Nome.Text, Telefone.Text, Email.Text, DataNasc.Text, Endereco.Text, Codigo);
+                String Stringcon = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Jadson.Oliveira\Documents\Base.mdb";
+                var conn = new OleDbConnection(Stringcon);
+                conn.Open();
 
-                SQL = @"Update clientes set Nome = '" + Nome + "',";
-                SQL += @"Update clientes set Telefone = '" + Telefone + "',";
-                SQL += @"Update clientes set Email = '" + Email + "',";
-                SQL += @"Update clientes set DataNasc = '" + DataNasc + "',";
-                SQL += @"Update clientes set Endereco = '" + Endereco + "' ";
-                SQL += @"where Codigo = " + Codigo;
+                String SQL;
 
-                OleDbCommand cmd = new OleDbCommand(SQL, conn);
+                SQL = "update clientes(Nome,DataNasc,Telefone,Email,Endereco)Values ";
+                SQL += "('" + Nome.Text + "','" + DataNasc.Text + "', '" + Telefone.Text + "','" + Email.Text + "', '" + Endereco.Text + "')";
+
+                var cmd = new OleDbCommand(SQL, conn);
 
                 cmd.ExecuteNonQuery();
 
-                conn.Close();
-
-                clienteDb.Alterar();
-
-                MessageBox.Show("Dados Alterados com Sucesso !!!!");
+                MessageBox.Show("Dados Cadastrados com Sucesso !!!!");
                 Nome.Clear();
                 Telefone.Clear();
                 DataNasc.Clear();
                 Email.Clear();
                 Endereco.Clear();
+
+                conn.Close();
 
             }
             catch (Exception erro)
@@ -124,6 +118,12 @@ namespace CadastroClientes
                 MessageBox.Show(erro.Message);
             }
 
+
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
 
         }
     }
